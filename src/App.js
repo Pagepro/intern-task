@@ -11,8 +11,12 @@ function App() {
         <div className="dots-wrapper">
             {new Array(20).fill('#000000').map((_, i) => {
                 const hideMe = i !== activeNumber;
-                return <Dot key={i} myNumber={i} hideMe={hideMe}
+                return <Dot 
+                    key={i} 
+                    myNumber={i} 
+                    hideMe={hideMe}
                     setActiveNumberHandler={setActiveNumberHandler}
+                    baseColor={_}
                 />
             })
             }

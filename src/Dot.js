@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import './Dot.css';
-import { generateRandomRGB, getRgbArrayAsString } from './utils/utils.js';
+import { generateRandomRGB, getRgbArrayAsString, hexToRgb } from './utils/utils.js';
 
 const Dot = props => {
-    const { myNumber, hideMe, setActiveNumberHandler } = props;
+    const { myNumber, hideMe, setActiveNumberHandler, baseColor } = props;
     const [isVisible, setIsVisible] = useState(false);
     const [isHover, setIsHover] = useState(false);
-    const [backgroundColorArray, setBackgroundColorArray] = useState([0, 0, 0]);
+    const [backgroundColorArray, setBackgroundColorArray] = useState(hexToRgb(baseColor));
 
     const clickHandler = () => {
         !isVisible && setIsVisible(true);
@@ -24,9 +24,9 @@ const Dot = props => {
     useEffect(() => {
         if (hideMe) {
             isVisible && setIsVisible(false);
-            setBackgroundColorArray([0, 0, 0]);
+            setBackgroundColorArray(hexToRgb(baseColor));
         }
-    }, [hideMe, isVisible])
+    }, [hideMe, isVisible, baseColor])
     return (
         <div className="dot"
             onClick={clickHandler}
