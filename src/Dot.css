@@ -3,9 +3,15 @@
     height: 50px;
     border-radius: 50px;
     background-color: black;
-    /* margin-top: 10px; */
+    color: #fff;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    cursor: pointer;
 }
 
-/* .dot + .dot {
-    margin-left: 10px;
-} */
+.dot:hover {
+    background-color: #ccc;
+}
