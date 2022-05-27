@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Dot.css';
+import { generateRandomRGB } from './utils/utils.js';
 
 const Dot = props => {
     const { myNumber } = props;
@@ -8,7 +9,7 @@ const Dot = props => {
 
     const clickHandler = () => {
         !isVisible && setIsVisible(true);
-        setBackgroundColorArray([8, 8, 8]);
+        setBackgroundColorArray(generateRandomRGB(backgroundColorArray));
     }
 
     return (
