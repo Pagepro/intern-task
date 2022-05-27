@@ -3,7 +3,7 @@ import './Dot.css';
 import { generateRandomRGB } from './utils/utils.js';
 
 const Dot = props => {
-    const { myNumber, activeNumber, setActiveNumberHandler } = props;
+    const { myNumber, hideMe, setActiveNumberHandler } = props;
     const [isVisible, setIsVisible] = useState(false);
     const [backgroundColorArray, setBackgroundColorArray] = useState([0, 0, 0]);
 
@@ -14,11 +14,11 @@ const Dot = props => {
     }
 
     useEffect(() => {
-        if (activeNumber !== myNumber && isVisible) {
-            setIsVisible(false);
+        if (hideMe) {
+            isVisible && setIsVisible(false);
             setBackgroundColorArray([0, 0, 0]);
         }
-    }, [activeNumber, myNumber, isVisible])
+    }, [hideMe, isVisible])
 
     return (
         <div className="dot" onClick={clickHandler}
@@ -31,4 +31,4 @@ const Dot = props => {
     );
 };
 
-export default Dot;
+export default React.memo(Dot);

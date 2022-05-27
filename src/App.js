@@ -9,9 +9,11 @@ function App() {
     }
     return (
         <div className="dots-wrapper">
-            {new Array(20).fill('#000000').map((_, i) => (
-                <Dot key={i} myNumber={i} activeNumber={activeNumber} setActiveNumberHandler={setActiveNumberHandler} />
-            ))}
+            {new Array(20).fill('#000000').map((_, i) => {
+                const hideMe = i !== activeNumber;
+                return <Dot key={i} myNumber={i} hideMe={hideMe} setActiveNumberHandler={setActiveNumberHandler} />
+            }
+            )}
         </div>
     );
 }
