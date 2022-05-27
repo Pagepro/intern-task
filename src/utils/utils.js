@@ -20,6 +20,6 @@ export const generateRandomRGB = (currentBackgroundColor = []) => {
  * @returns {string}
  * Converts rgb array to style string [r,g,b] => r,g,b
  */
-export const rgbArrayAsString = (rgbArray = [170, 170, 170]) => {
+export const getRgbArrayAsString = (rgbArray = [170, 170, 170]) => {
     return rgbArray.join(',');
 }

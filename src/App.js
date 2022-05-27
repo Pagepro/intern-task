@@ -1,12 +1,10 @@
 import { useCallback, useState } from 'react';
 import './App.css';
 import Dot from "./Dot";
-// import DotContextProvider from './Context/DotContextProvider';
 
 function App() {
     const [activeNumber, setActiveNumber] = useState(null);
     const setActiveNumberHandler = useCallback((newNumber) => {
-        // activeNumber !== newNumber && setActiveNumber(newNumber);
         setActiveNumber(newNumber);
     }, []);
     return (

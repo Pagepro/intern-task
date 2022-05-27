@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './Dot.css';
-import { generateRandomRGB, rgbArrayAsString } from './utils/utils.js';
+import { generateRandomRGB, getRgbArrayAsString } from './utils/utils.js';
 
 const Dot = props => {
     const { myNumber, hideMe, setActiveNumberHandler } = props;
@@ -12,7 +12,7 @@ const Dot = props => {
         !isVisible && setIsVisible(true);
         isHover && setIsHover(false);
         setBackgroundColorArray(generateRandomRGB(backgroundColorArray));
-        setActiveNumberHandler(myNumber);
+        hideMe && setActiveNumberHandler(myNumber);
     }
 
     const onHoverHandler = () => {
@@ -33,7 +33,7 @@ const Dot = props => {
             onMouseEnter={onHoverHandler}
             onMouseLeave={onLeaveHandler}
             style={{
-                backgroundColor: `rgb(${isHover ? rgbArrayAsString() : rgbArrayAsString(backgroundColorArray)})`
+                backgroundColor: `rgb(${isHover ? getRgbArrayAsString() : getRgbArrayAsString(backgroundColorArray)})`
             }}
         >
             {isVisible && <span> {myNumber}</span>}
