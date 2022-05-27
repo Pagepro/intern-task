@@ -1,8 +1,11 @@
 
 .dots-wrapper {
-    display: block;
+    display: grid;
     background: #fff;
     height: 100vh;
     width: 100vw;
     overflow: auto;
+    grid-template-columns: repeat(5, 1fr);
+    align-items: center;
+    justify-items: center;
 }

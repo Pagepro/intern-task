@@ -3,9 +3,9 @@
     height: 50px;
     border-radius: 50px;
     background-color: black;
-    margin-top: 10px;
+    /* margin-top: 10px; */
 }
 
-.dot + .dot {
+/* .dot + .dot {
     margin-left: 10px;
-}
+} */
